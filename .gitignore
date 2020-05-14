@@ -13,3 +13,6 @@ dist/
 *.njsproj
 package-lock.json
 .DS_Store
+
+#Electron-builder output
+/dist_electron
