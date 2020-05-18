@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2018-12-15 00:33:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-14 11:04:08
+ * @Last Modified time: 2020-05-18 17:36:33
  */
 'use strict'
 const path = require('path')
@@ -93,6 +93,14 @@ module.exports = {
             }
           ]
         ])
+      },
+      chainWebpackRendererProcess: config => {
+        config.plugin('define').tap(args => {
+          args[0]['HOME_PATH'] = JSON.stringify(
+            process.env.HOME || process.env.USERPROFILE
+          )
+          return args
+        })
       }
     }
   }

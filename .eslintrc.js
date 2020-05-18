@@ -31,7 +31,8 @@ module.exports = {
     axios: false,
     Cesium: false,
     DC: false,
-    '%=': false
+    '%=': false,
+    HOME_PATH: false
   },
   parserOptions: {
     parser: 'babel-eslint'

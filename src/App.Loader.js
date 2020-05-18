@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2020-03-19 22:36:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-13 23:00:05
+ * @Last Modified time: 2020-05-18 16:22:32
  */
 import Vue from 'vue'
 import 'dvgis/dc-sdk/dist/dc.base.min'
@@ -24,7 +24,11 @@ class AppLoader {
 
   install() {
     global.Vue = Vue
-    return Promise.all([import('@/components'), import('@/loader/HttpLoader')])
+    return Promise.all([
+      import('@/components'),
+      import('@/loader/HttpLoader'),
+      import('@/loader/ConfigLoader')
+    ])
   }
 }
 
