@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-10-12 12:48:10
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-18 17:46:30
+ * @Last Modified time: 2020-05-18 17:50:27
  */
 
 const JSON_TEMP = {
@@ -20,7 +20,8 @@ class ConfigLoader {
       fs.exists(`${HOME_PATH}/.dc-conf`, exists => {
         !exists && fs.mkdirSync(`${HOME_PATH}/.dc-conf`)
         fs.writeJsonSync(`${HOME_PATH}/.dc-conf/config.json`, JSON_TEMP)
-        global.Config = fs.readJsonSync(`${HOME_PATH}/.dc-conf/config.json`)
+        exists &&
+          (global.Config = fs.readJsonSync(`${HOME_PATH}/.dc-conf/config.json`))
       })
     } else {
       global.Http.get('config/config.json')
