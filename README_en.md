@@ -2,28 +2,28 @@
 
 [**🇨🇳 中文**](./README.md) | [**🇬🇧English**](./README_en.md)
 
-> 该脚手架基于 VueCli4 、 vue-cli-plugin-electron-builder 、 @dvgis/dc-sdk 搭建，用于快速构建 3D 桌面端应用。
+> This scaffold is built based on VueCli4, vue-cli-plugin-electronic-builder and @dvgis/dc-sdk, which is used to quickly build 3D desktop applications.
 
-## 启动
+## Start
 
 ```node
 yarn run serve
 yarn run electron:serve
 ```
 
-## 打包
+## Package
 
 ```node
 yarn run build
 yarn run electron:build
 ```
 
-## 配置说明
+## Configuration
 
 ```js
 const dvgis = './node_modules/@dvgis'
 module.exports = {
-  // 其他配置
+  // Other configuration
   chainWebpack: config => {
     config.resolve.alias.set('dvgis', path.resolve(__dirname, dvgis))
     config.plugin('copy').use(CopywebpackPlugin, [
@@ -67,6 +67,6 @@ module.exports = {
 }
 ```
 
-## 示例
+## demo
 
 ![pic]('./pic.png')
