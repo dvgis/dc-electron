@@ -67,6 +67,12 @@ module.exports = {
 }
 ```
 
+## Global variable Config
+
+> gets the value assigned by the corresponding configuration file
+> desktop: **_.dc-conf/config.json_** in the current user directory
+> Web side: the project directory **_public/config/config json_**
+
 ## demo
 
 ![pic]('./pic.png')
