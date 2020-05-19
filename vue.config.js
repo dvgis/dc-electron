@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2018-12-15 00:33:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-18 17:36:33
+ * @Last Modified time: 2020-05-19 10:01:36
  */
 'use strict'
 const path = require('path')
@@ -96,9 +96,11 @@ module.exports = {
       },
       chainWebpackRendererProcess: config => {
         config.plugin('define').tap(args => {
-          args[0]['HOME_PATH'] = JSON.stringify(
-            process.env.HOME || process.env.USERPROFILE
-          )
+          const env = args[0]['process.env']
+          for (let key in env) {
+            args[0][`process.env.${key}`] = env[key]
+          }
+          delete args[0]['process.env']
           return args
         })
       }

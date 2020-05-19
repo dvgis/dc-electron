@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-10-12 12:48:10
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-18 17:50:27
+ * @Last Modified time: 2020-05-19 10:02:33
  */
 
 const JSON_TEMP = {
@@ -16,6 +16,7 @@ const JSON_TEMP = {
 class ConfigLoader {
   load() {
     if (process.env.IS_ELECTRON) {
+      const HOME_PATH = process.env.HOME || process.env.USERPROFILE
       const fs = require('fs-extra')
       fs.exists(`${HOME_PATH}/.dc-conf`, exists => {
         !exists && fs.mkdirSync(`${HOME_PATH}/.dc-conf`)
