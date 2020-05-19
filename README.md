@@ -70,9 +70,11 @@ module.exports = {
 ## 全局变量 Config
 
 > 获取对应配置文件赋予的值
+
 > 桌面端： 当前用户目录下的 **_.dc-conf/config.json_**
+
 > Web 端： 项目目录下的 **_public/config/config.json_**
 
 ## 示例
 
-![pic]('./pic.png')
+![pic](https://github.com/Digital-Visual/dc-electron/blob/master/pic.png)
