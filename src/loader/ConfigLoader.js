@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-10-12 12:48:10
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-19 10:02:33
+ * @Last Modified time: 2020-05-19 11:00:01
  */
 
 const JSON_TEMP = {
@@ -20,7 +20,8 @@ class ConfigLoader {
       const fs = require('fs-extra')
       fs.exists(`${HOME_PATH}/.dc-conf`, exists => {
         !exists && fs.mkdirSync(`${HOME_PATH}/.dc-conf`)
-        fs.writeJsonSync(`${HOME_PATH}/.dc-conf/config.json`, JSON_TEMP)
+        !exists &&
+          fs.writeJsonSync(`${HOME_PATH}/.dc-conf/config.json`, JSON_TEMP)
         exists &&
           (global.Config = fs.readJsonSync(`${HOME_PATH}/.dc-conf/config.json`))
       })
