@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2018-12-15 00:33:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-19 12:40:53
+ * @Last Modified time: 2020-06-02 17:04:22
  */
 'use strict'
 const path = require('path')
@@ -71,6 +71,11 @@ module.exports = {
     config.plugin('copy').use(CopywebpackPlugin, [
       [
         {
+          from: path.join(__dirname, 'public'),
+          to: path.join(__dirname, 'dist'),
+          ignore: ['index.html']
+        },
+        {
           from: path.join(dvgis, 'dc-sdk/dist/resources'),
           to: path.join(__dirname, 'dist', 'libs/dc-sdk/resources')
         }
@@ -87,6 +92,11 @@ module.exports = {
         fs.removeSync(path.join(__dirname, outputDir, 'ThirdParty'))
         config.plugin('copy').use(CopywebpackPlugin, [
           [
+            {
+              from: path.join(__dirname, 'public'),
+              to: path.join(__dirname, outputDir),
+              ignore: ['index.html']
+            },
             {
               from: path.join(dvgis, 'dc-sdk/dist/resources'),
               to: path.join(__dirname, outputDir, 'libs/dc-sdk/resources')

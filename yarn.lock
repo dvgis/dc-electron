@@ -809,17 +809,17 @@
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
-"@dvgis/dc-plugins@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dvgis/dc-plugins/-/dc-plugins-1.0.1.tgz#8cf68181844c6a0a4e6020bff57d19aff5aeb1aa"
-  integrity sha512-8em8Abm3m2VZZBpQFqdD1chE24IzeKlDQnY/R+QEqQ5W8prl5kK7z7AT/kCISX2N+RvfOXiMMEzu4hMquodPhw==
+"@dvgis/dc-plugins@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dvgis/dc-plugins/-/dc-plugins-1.1.1.tgz#c09b7ae3c37f88f1402a0726633cbe679ce47613"
+  integrity sha512-bHuwI4cS0t7LwfVVMUdQvHd52dRVs+mj9EjJTTkSNzdFEr9ejPm+5UBIsZH+BnJPnFziO9R0Vsh6YWkvVx+Mnw==
   dependencies:
     heatmap.js "^2.0.5"
 
-"@dvgis/dc-sdk@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@dvgis/dc-sdk/-/dc-sdk-1.5.1.tgz#05d64cbbe9c5cabf0916312fb771c55c97dd87b9"
-  integrity sha512-ZkZ2B8u93dCxSxmZNF3BTz3s7zF7FJ8dRt0hmr6bYfVocSscPdUzQTH8XZyXJ6zVfmsKQ5Qfc2kKqoeMAj98Xw==
+"@dvgis/dc-sdk@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@dvgis/dc-sdk/-/dc-sdk-1.6.2.tgz#ed9845e6ed0e2cfa49465042ae18c33aaab6341b"
+  integrity sha512-yheI9o569w41uFcI/pEyG26VuemQBjsO6ZAPIz5dp37Gc1XhHr7BAofIBNv7IhLpvlxb5wRf2CCOF3vCMZqMBQ==
   dependencies:
     cesium "^1.69.0"
 

@@ -1,5 +1,9 @@
 <template>
-  <div id="viewer-container" class="viewer-container"></div>
+  <div
+    id="viewer-container"
+    class="viewer-container"
+    style="background: url('assets/images/bg.jpg');background-size:100% 100%;"
+  ></div>
 </template>
 
 <script>
@@ -10,7 +14,19 @@ export default {
   },
   methods: {
     initViewer() {
-      let viewer = new DC.Viewer('viewer-container')
+      let viewer = new DC.Viewer('viewer-container', {
+        orderIndependentTranslucency: false,
+        contextOptions: {
+          webgl: {
+            alpha: true
+          }
+        }
+      }).setOptions({
+        showMoon: false,
+        showSkyBox: false
+      })
+
+      //viewer.addEffect(new DC.BloomEffect())
       this.$emit('on-viewer-completed', viewer)
     }
   },
@@ -25,5 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  //background: url('../../assets/images/bg.jpg');
+  background-size: 100% 100%;
 }
 </style>
