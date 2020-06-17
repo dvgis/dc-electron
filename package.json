@@ -13,8 +13,8 @@
   },
   "main": "background.js",
   "dependencies": {
-    "@dvgis/dc-plugins": "^1.1.1",
-    "@dvgis/dc-sdk": "^1.6.2",
+    "@dvgis/dc-plugins": "^1.2.0",
+    "@dvgis/dc-sdk": "^1.7.5",
     "axios": "^0.19.0",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",

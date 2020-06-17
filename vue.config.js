@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2018-12-15 00:33:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-06-02 17:04:22
+ * @Last Modified time: 2020-06-17 17:27:52
  */
 'use strict'
 const path = require('path')
@@ -27,8 +27,13 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    config.resolve.extensions.add('.js').add('.vue')
-    config.resolve.alias.set('dvgis', path.resolve(__dirname, dvgis))
+    config.resolve.extensions
+      .add('.js')
+      .add('.vue')
+      .end()
+      .alias.set('dvgis', resolve(dvgis))
+      .end()
+
     config.module
       .rule('images')
       .test(/\.(png|jpe?g|gif)(\?.*)?$/)
