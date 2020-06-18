@@ -29,6 +29,11 @@ module.exports = {
     config.plugin('copy').use(CopywebpackPlugin, [
       [
         {
+          from: path.join(__dirname, 'public'),
+          to: path.join(__dirname, 'dist'),
+          ignore: ['index.html']
+        },
+        {
           from: path.join(dvgis, 'dc-sdk/dist/resources'),
           to: path.join(__dirname, 'dist', 'libs/dc-sdk/resources')
         }
@@ -45,6 +50,11 @@ module.exports = {
         fs.removeSync(path.join(__dirname, outputDir, 'ThirdParty'))
         config.plugin('copy').use(CopywebpackPlugin, [
           [
+            {
+              from: path.join(__dirname, 'public'),
+              to: path.join(__dirname, outputDir),
+              ignore: ['index.html']
+            },
             {
               from: path.join(dvgis, 'dc-sdk/dist/resources'),
               to: path.join(__dirname, outputDir, 'libs/dc-sdk/resources')
