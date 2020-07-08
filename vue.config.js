@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2018-12-15 00:33:19
  * @Last Modified by: Caven
- * @Last Modified time: 2020-06-17 17:27:52
+ * @Last Modified time: 2020-07-08 12:57:51
  */
 'use strict'
 const path = require('path')
@@ -89,10 +89,10 @@ module.exports = {
   },
   pluginOptions: {
     electronBuilder: {
+      nodeIntegration: true,
       chainWebpackMainProcess: config => {
         let outputDir = 'dist_electron/bundled'
         fs.removeSync(path.join(__dirname, outputDir, 'Assets'))
-        fs.removeSync(path.join(__dirname, outputDir, 'Widgets'))
         fs.removeSync(path.join(__dirname, outputDir, 'Workers'))
         fs.removeSync(path.join(__dirname, outputDir, 'ThirdParty'))
         config.plugin('copy').use(CopywebpackPlugin, [
