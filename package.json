@@ -15,7 +15,7 @@
   "dependencies": {
     "@dvgis/dc-plugins": "^1.4.1",
     "@dvgis/dc-sdk": "^1.8.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "element-ui": "^2.13.0",
