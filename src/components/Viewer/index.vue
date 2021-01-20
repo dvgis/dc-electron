@@ -25,8 +25,6 @@ export default {
         showMoon: false,
         showSkyBox: false
       })
-
-      //viewer.addEffect(new DC.BloomEffect())
       this.$emit('on-viewer-completed', viewer)
     }
   },

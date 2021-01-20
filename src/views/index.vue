@@ -8,11 +8,9 @@
 import ViewerApi from '@/api/ViewerApi'
 export default {
   name: 'Index',
-  components: {},
   methods: {
     viewerCompletedHandler(viewer) {
-      global.viewerApi = new ViewerApi()
-      global.viewerApi.viewer = viewer
+      global.viewerApi = new ViewerApi(viewer)
     }
   }
 }

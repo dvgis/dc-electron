@@ -1,13 +1,13 @@
-/*
+/**
  * @Author: Caven
  * @Date: 2020-03-19 22:36:19
- * @Last Modified by: Caven
- * @Last Modified time: 2020-05-19 09:25:48
  */
+
 import Vue from 'vue'
-import 'dvgis/dc-sdk/dist/dc.base.min'
-import 'dvgis/dc-sdk/dist/dc.core.min'
-import 'dvgis/dc-plugins/dist/dc.plugins.min'
+import DC from 'dvgis/dc-sdk/dist/dc.base.min'
+import DcCore from 'dvgis/dc-sdk/dist/dc.core.min'
+import DcPlugins from 'dvgis/dc-plugins/dist/dc.plugins.min'
+
 import 'dvgis/dc-sdk/dist/dc.core.min.css'
 
 const hub = new Vue()
@@ -24,6 +24,10 @@ class AppLoader {
 
   install() {
     global.Vue = Vue
+    global.Hub = hub
+    global.DC = DC
+    DC.use(DcCore)
+    DC.use(DcPlugins)
     return Promise.all([
       import('@/components'),
       import('@/loader/HttpLoader'),
