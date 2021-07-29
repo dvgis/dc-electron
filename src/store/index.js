@@ -4,14 +4,13 @@
  * @Last Modified by: Caven
  * @Last Modified time: 2020-03-19 22:23:41
  */
-import Vue from 'vue'
-import Vuex from 'vuex'
 
+import { createStore } from 'vuex'
 import getters from './getters'
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  modules: {},
-  getters
+const store = createStore({
+  getters,
+  modules: {}
 })
+
+export default store

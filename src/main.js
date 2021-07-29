@@ -4,25 +4,28 @@
  * @Last Modified by: Caven
  * @Last Modified time: 2020-05-18 17:19:02
  */
-import appLoader from './App.Loader'
-;(async () => {
-  let loaders = await appLoader.install()
-  for (let i = 0; i < loaders.length; i++) {
-    let loader = loaders[i].default
-    if (!loader || !loader.load) continue
-    await loader.load()
-  }
 
+import { createApp } from 'vue'
+;(async () => {
   Promise.all([
     import('./App.vue'),
     import('./router'),
-    import('./store')
-  ]).then(([{ default: App }, { default: router }, { default: store }]) => {
-    new Vue({
-      el: '#app',
-      router,
-      store,
-      render: h => h(App)
-    })
-  })
+    import('./store'),
+    import('./loader')
+  ]).then(
+    ([
+      { default: App },
+      { default: router },
+      { default: store },
+      { default: appLoader }
+    ]) => {
+      const app = createApp(App)
+      app.config.productionTip = false
+      app.use(appLoader)
+      app.use(router)
+      app.use(store)
+      app.use(appLoader)
+      app.mount('#app')
+    }
+  )
 })()

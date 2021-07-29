@@ -14,7 +14,7 @@ const JSON_TEMP = {
 }
 
 class ConfigLoader {
-  load() {
+  install(app) {
     if (process.env.IS_ELECTRON) {
       const HOME_PATH = process.env.HOME || process.env.USERPROFILE
       const fs = require('fs-extra')
@@ -39,4 +39,5 @@ class ConfigLoader {
 }
 
 const configLoader = new ConfigLoader()
+
 export default configLoader
